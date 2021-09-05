@@ -17,8 +17,8 @@
 #include <SPIFFS.h>
 #endif
 
-const char* ssid = "AP 305";
-const char* password = "Ana@Ingrid";
+const char* ssid = "wifi-ssid";
+const char* password = "wifi-password";
 const char* host = "esp32fs";
 
 
