@@ -12,7 +12,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t weleng
   switch(type) {
     case WStype_DISCONNECTED:
       Serial.printf("[%u] Disconnected!\n", num);
-      break;
+    break;
     case WStype_CONNECTED:
       {
         IPAddress ip = webSocket.remoteIP(num);
@@ -20,7 +20,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t weleng
         //String jsonResponse = "{ \"id\": \""+ deviceId +"\", \"type\": 1, \"value\": " + String(digitalRead(relayPin)) + " }";
         //webSocket.broadcastTXT(jsonResponse); 
       }
-      break;
+    break;
     case WStype_TEXT: {
       byte separator = payloadString.indexOf('=');
       String var = payloadString.substring(0,separator);
@@ -44,11 +44,11 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t weleng
         lcd.print(valor);
       }
     }
-      break;
+    break;
     case WStype_BIN:
       Serial.printf("[%u] get binary length: %u\n", num, length);
       hexdump(payload, length);
-      break;  
+    break;  
   }
 }  
                                           // parte do codigo que faz a contagem do tempo usando a função millis().
