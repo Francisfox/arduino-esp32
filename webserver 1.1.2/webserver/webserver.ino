@@ -6,8 +6,10 @@
 #include <LiquidCrystal_I2C.h>
 //Inicializa o display no endereco 0x27
 LiquidCrystal_I2C lcd(0x3F,16,2);                  
-const char* ssid = "DESKTOP";                         //coloca o ssid da rede interna para acessar   
-const char* password = "12345678";                    //coloca o password da rede interna para acessar 
+
+const char* ssid = "YOUR SSID";                        //coloca o ssid da rede interna para acessar 
+const char* password = "YOUR PASSWORD";                //coloca o password da rede interna para acessar 
+                   
 WebServer server(80);
 WebSocketsServer webSocket = WebSocketsServer (88);   // criando o objeto WebSocket para o WebSocketsServer 
 
@@ -36,6 +38,10 @@ void setup(void) {
   lcd.setCursor(0,1);  
   lcd.print(WiFi.localIP());
   Serial.println(WiFi.localIP());
+  server.onNotFound([](){
+    if(!handleFileRead(server.uri()))
+      server.send(404, "text/plain", "FileNotFound");
+  });
   server.on("/",WebSite);
   server.begin();
   webSocket.begin();
