@@ -1,1 +1,3 @@
-testse 
+InitWebSocket()
+  function InitWebSocket(){
+  }
