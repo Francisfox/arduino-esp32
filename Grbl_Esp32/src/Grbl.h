@@ -1,3 +1,4 @@
+#pragma once
 // Grbl versioning system
 const char* const GRBL_VERSION       = "1.3a";
 const char* const GRBL_VERSION_BUILD = "20240507";
