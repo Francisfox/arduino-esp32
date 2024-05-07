@@ -12,5 +12,9 @@ const char* const GRBL_VERSION_BUILD = "20240507";
 
 #include <driver/timer.h>
 
+// Define the Grbl system include files. NOTE: Do not alter organization.
+#include "Config.h"
+
+
 void grbl_init();
 void run_once();
