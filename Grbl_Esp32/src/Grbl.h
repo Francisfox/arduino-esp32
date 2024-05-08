@@ -14,7 +14,7 @@ const char* const GRBL_VERSION_BUILD = "20240507";
 
 // Define the Grbl system include files. NOTE: Do not alter organization.
 #include "Config.h"
-
+#include "Serial.h"
 
 void grbl_init();
 void run_once();
