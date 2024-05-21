@@ -31,7 +31,7 @@ void setup() {
   Serial.begin(BAUD_RATE);                               // init serial port for debugging
   pinMode(LED,OUTPUT); 
   #ifdef ENABLE_WIFI
-    WebUI::wifi_config.begin();
+    wifi_config.begin();
   #endif
   Serial.print("Starting Access Point ... ");
 
