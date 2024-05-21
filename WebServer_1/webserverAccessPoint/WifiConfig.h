@@ -40,5 +40,6 @@ namespace WebUI {
       static void   WiFiEvent(WiFiEvent_t event);
       static bool   _events_registered;  
   };
-    extern WiFiConfig wifi_config;
 }
+// Declaração da classe para que seja visível em outros arquivos
+extern WebUI::WiFiConfig wifi_config;
