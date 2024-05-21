@@ -53,3 +53,5 @@ namespace WebUI {
     }  
   }
 }
+// Definição da variável global
+WebUI::WiFiConfig wifi_config;
