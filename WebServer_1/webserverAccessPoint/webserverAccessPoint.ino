@@ -11,12 +11,13 @@
 #include <WebSocketsServer.h>                         //incluindo a class WebSocketsServer 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
+#include "SAIDAS.h"
 //Inicializa o display no endereco 0x27
 LiquidCrystal_I2C lcd(0x3F,16,2);      
 
 WebServer server(80);
 WebSocketsServer webSocket = WebSocketsServer (88);   // criando o objeto WebSocket para o WebSocketsServer 
-
+SAIDAS LED1(2);
 int LED = 2;
 #include "Web.h";
 #include "Botao.h";
@@ -45,8 +46,9 @@ void setup() {
 }
 void loop() {
   webSocket.loop();
-   server.handleClient();
-   botao();
+  server.handleClient();
+  LED1.toggle(); 
+  botao();
   delay(2);//allow the cpu to switch to other tasks
 
 }
