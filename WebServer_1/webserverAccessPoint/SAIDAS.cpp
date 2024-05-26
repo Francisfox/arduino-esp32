@@ -11,10 +11,10 @@ void SAIDAS::on(){
 }
 void SAIDAS::off(){
   digitalWrite(_pin, LOW);
-  _state = false
+  _state = false;
 }
 void SAIDAS::toggle(){
-  if(state){
+  if(_state){
     off();  
   }else{
     on();
