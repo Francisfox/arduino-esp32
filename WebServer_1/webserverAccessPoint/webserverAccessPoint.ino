@@ -4,6 +4,12 @@
 // Written by mo thunderz (last update: 05.12.2021)
 // ---------------------------------------------------------------------------------------
 #include "Config.h"
+#include "SAIDAS.h"
+boolean LEDonnff = false;                             //Criando variavel boeana iniciando com valor falso.
+String JSONtxt;                                       // Criando as strings
+String LEDswitch;
+int CONT;
+
 #include "WifiConfig.h"
 #include <WebServer.h>                                //inclui a biblioteca webServer para acesso a rede wifi
 
@@ -11,7 +17,6 @@
 #include <WebSocketsServer.h>                         //incluindo a class WebSocketsServer 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-#include "SAIDAS.h"
 //Inicializa o display no endereco 0x27
 LiquidCrystal_I2C lcd(0x3F,16,2);      
 
@@ -47,8 +52,14 @@ void setup() {
 void loop() {
   webSocket.loop();
   server.handleClient();
-  LED1.toggle(); 
-  botao();
+  if (LEDonnff == true){
+    LEDswitch = "ON";
+    LED1.on();
+  }else{
+    LEDswitch = "OFF";
+    LED1.off();      
+  }
+  JSONtxt = "{\"LEDonoff\":\""+LEDswitch+"\",\"cont\":\""+CONT+"\"}";
+  webSocket.broadcastTXT(JSONtxt);
   delay(2);//allow the cpu to switch to other tasks
-
 }
