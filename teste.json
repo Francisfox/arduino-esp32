@@ -2,6 +2,19 @@
   "nome": "Francis Brito",
   "idade": 39,
   "profissao": "Desenvolvedor",
+  "habilidades": [
+    {
+      "linguagem": "JavaScript",
+      "nivel": "Avançado"
+    },
+    {
+      "linguagem": "Python",
+      "nivel": "Intermediário"
+    }
+  ],
   "disponivel_para_trabalho": true,
-  "email": "francismarfox@hotmail.com"
+  "contato": {
+    "email": "francismarfox@hotmail.com",
+    "telefone": "+55 11 91234-5678"
+  }
 }
