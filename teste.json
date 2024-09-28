@@ -1,15 +1,15 @@
 {
-  "nome": "Francis Brito",
+  "nome": "Francismar dos Santos Brito",
   "idade": 39,
   "profissao": "Desenvolvedor",
   "habilidades": [
     {
       "linguagem": "JavaScript",
-      "nivel": "Avançado"
+      "nivel": "Intermediario"
     },
     {
       "linguagem": "Python",
-      "nivel": "Intermediário"
+      "nivel": "Intermediario"
     }
   ],
   "disponivel_para_trabalho": true,
